@@ -1,0 +1,49 @@
+{
+  "artDB": [
+    {
+      "id": "0",
+      "title": "In Bloom",
+      "artSize": "30x40",
+      "paintType": "acrylic on board",
+      "paintTypeUa": "акрил на дошці",
+      "year": 2026,
+      "img": "img1.jpg",
+      "priceUSD": 97,
+      "priceUAH": 4100
+    },
+    {
+      "id": "1",
+      "title": "Acceptance",
+      "artSize": "50x40",
+      "paintType": "acrylic on canvas",
+      "paintTypeUa": "акрил на полотні",
+      "year": 2026,
+      "img": "img2.jpg",
+      "priceUSD": 100,
+      "priceUAH": 4200
+    },
+    {
+      "id": "2",
+      "title": "Red memory",
+      "artSize": "30x40",
+      "paintType": "acrylic on canvas",
+      "paintTypeUa": "акрил на полотні",
+      "year": 2025,
+      "img": "img3.jpg",
+      "priceUSD": 150,
+      "priceUAH": 6400
+    },
+    {
+      "id": "3",
+      "title": "Body and Flow",
+      "artSize": "18x24",
+      "paintType": "acrylic on board",
+      "paintTypeUa": "акрил на дошці",
+      "year": 2026,
+      "img": "img4.jpg",
+      "priceUSD": 16,
+      "priceUAH": 550
+    }
+  ],
+  "basket": []
+}

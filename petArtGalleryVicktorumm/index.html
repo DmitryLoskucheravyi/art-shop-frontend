@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <h1>
+                    <span class="header_span span1">
+                        <span class="s1">V</span>
+                        <span class="s2">I</span>
+                        <span class="s3">K</span>
+                        <span class="s4">T</span>
+                        <span class="s5">O</span>
+                        <span class="s6">R</span>
+                        <span class="s7">U</span>
+                        <span class="s8">M</span>
+                        <span class="s9">M</span>
+                    </span>
+                    <span class="header_span span2">
+                        <span class="s10">G</span>
+                        <span class="s11">A</span>
+                        <span class="s12">L</span>
+                        <span class="s13">E</span>
+                        <span class="s14">R</span>
+                        <span class="s15">R</span>
+                        <span class="s16">Y</span>
+                    </span>
+                </h1>
+
+                <ul class="header__ul">
+                    <li class="nav__ul_item"><a href="#about">About</a></li>
+                    <li class="nav__ul_item"><a href="#arts">Art’s</a></li>
+                    <li class="nav__ul_item"><a href="#">Contacts</a></li>
+                </ul>
+
+                <nav class="header_nav">
+                    <select name="header-swap-language" id="swap-language" class="header-swap-language">
+                        <option value="en" selected>EN</option>
+                        <option value="uk">UA</option>
+                    </select>
+                    <img src="assets/icons/basket.svg" alt="basket" class="bascet-trigger" />
+                    <img src="assets/icons/profile.svg" alt="basket" />
+
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="shop__basket-show-parent hide">
+
+        <div class="confirm hide">
+            <div class="confirm-modal">
+                <p class="confirm-title en">ARE YOU SURE?</p>
+                <p class="confirm-title uk hide">ВИ ВПЕВНЕНІ?</p>
+                <div>
+                    <button class="btn cancel">cancel</button>
+                    <button class="btn conf">CONFIRM</button>
+                </div>
+            </div>
+            <div class="confirm-back"></div>
+        </div>
+
+        <div class="shop__basket-show ">
+            <div class="shop__basket-navigation">
+                <p class="shop__basket-back">Back to site</p>
+                <hr class="shop__basket-line">
+                <button class=" btn shop__basket-button">Clear</button>
+            </div>
+            <div class="shop__basket-main">
+                <div class="shop__basket-orders">
+                    <p class="order-title en">Your orders:</p>
+                    <p class="order-title uk hide">Ваші замовлення:</p>
+                    <div class="shop__basket-order-items">
+
+                    </div>
+                </div>
+                <div class="shop__basket-total">
+                    <p class="order-title en">Total:</p>
+                    <p class="order-title uk hide">Всього:</p>
+                    <table class="total-table">
+
+
+                    </table>
+
+                    <button class=" btn order-total-btn">Buy now</button>
+
+                </div>
+            </div>
+            <div class="bascet-zero-item hide">
+                <img src="assets/icons/basket-em.svg" alt="">
+                <p class="bascet-zero-description en">No items here...</p>
+                <p class="bascet-zero-description uk hide">Тут нічого немає...</p>
+                <button class="btn bascet-zero-btn">Shop Now</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <main>
+        <section class="hero" id="about">
+            <div class="container">
+                <p class="hero__description en">
+                    <span class="hero__span_1">Art</span> <span class="hero__span_2">is a line</span> <span
+                        class="hero__span_3">around your</span> <span class="hero__span_4">thoughts</span>
+                    <span class="hero__span_5">— Gustav Klimt</span>
+                </p>
+                <p class="hero__description uk hide">
+                    <span class="hero__span_1">Мистецтво</span> <span class="hero__span_2">це лінія</span> <span
+                        class="hero__span_3">навколо твоїх</span> <span class="hero__span_4">думок</span>
+                    <span class="hero__span_5">— Густав Клімт</span>
+                </p>
+            </div>
+        </section>
+        <section class="section__about">
+            <div class="about__wrapper">
+                <p class="about__description en ">
+                    Victoria is an intuitive painting artist.<br />
+                    She creates emotional, bodily images about inner states and human
+                    <br />connections.<br />
+                    Her works are feelings captured in color.
+                </p>
+                <p class="about__description uk hide">
+                    Вікторія — художниця інтуїтивного живопису.<br />
+                    Створює емоційні, тілесні образи про внутрішні стани та людські
+                    <br />звʼязки.<br />
+                    Її роботи — це відчуття, зафіксовані в кольорі.
+                </p>
+
+
+
+            </div>
+        </section>
+
+        <section class="shop" id="arts">
+            <div class="shop-item">
+                <div class="shop-item-view">
+                    <img src="assets/prod/img1.jpg" alt="art" class="shop-item-view-img">
+                    <img src="assets/icons/shop-slider-bar.svg" alt="" class="shop-item-view-slider-bar">
+                    <p class="shop-item-price">97$</p>
+                </div>
+                <div class="shop-item-info">
+                    <p class="item-info-title">"In Bloom"</p>
+                    <ul class="item-info-list">
+                        <li class="item-info-list-el">30x40</li>
+                        <li class="item-info-list-el">acrylic on board</li>
+                        <li class="item-info-list-el">2026</li>
+                    </ul>
+                    <button class="btn shop-item-btn">Buy</button>
+                </div>
+            </div>
+
+            <div class="shop-item">
+                <div class="shop-item-view">
+                    <img src="assets/prod/img2.jpg" alt="art" class="shop-item-view-img">
+                    <img src="assets/icons/shop-slider-bar.svg" alt="" class="shop-item-view-slider-bar">
+                    <p class="shop-item-price">100$</p>
+                </div>
+                <div class="shop-item-info">
+                    <p class="item-info-title">“Acceptance”</p>
+                    <ul class="item-info-list">
+                        <li class="item-info-list-el">50x40</li>
+                        <li class="item-info-list-el">acrylic on canvas</li>
+                        <li class="item-info-list-el">2026</li>
+                    </ul>
+                    <button class="btn shop-item-btn">Buy</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <div class="shop-item-view">
+                    <img src="assets/prod/img3.jpg" alt="art" class="shop-item-view-img">
+                    <img src="assets/icons/shop-slider-bar.svg" alt="" class="shop-item-view-slider-bar">
+                    <p class="shop-item-price">150$</p>
+                </div>
+                <div class="shop-item-info">
+                    <p class="item-info-title">“Red memory”</p>
+                    <ul class="item-info-list">
+                        <li class="item-info-list-el">30x40</li>
+                        <li class="item-info-list-el">acrylic on canvas</li>
+                        <li class="item-info-list-el">2025</li>
+                    </ul>
+                    <button class="btn shop-item-btn">Buy</button>
+                </div>
+            </div>
+
+            <div class="shop-item">
+                <div class="shop-item-view">
+                    <img src="assets/prod/img4.jpg" alt="art" class="shop-item-view-img">
+                    <img src="assets/icons/shop-slider-bar.svg" alt="" class="shop-item-view-slider-bar">
+                    <p class="shop-item-price">16$</p>
+                </div>
+                <div class="shop-item-info">
+                    <p class="item-info-title">“Body and Flow”</p>
+                    <ul class="item-info-list">
+                        <li class="item-info-list-el">18x24</li>
+                        <li class="item-info-list-el">acrylic on board</li>
+                        <li class="item-info-list-el">2026</li>
+                    </ul>
+                    <button class="btn shop-item-btn">Buy</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="gallary__section">
+            <div class="container">
+                <div class="gallary__inner">
+                    <h2 class="title-h2">GALLARY</h2>
+                    <div class="gallary__wrapper">
+                        <div class="gallary__wrapper-item">
+                            <img src="assets/prod/img1.jpg" alt="">
+                        </div>
+
+                        <div class="gallary__wrapper-item">
+                            <img src="assets/prod/img2.jpg" alt="">
+                        </div>
+                        <div class="gallary__wrapper-item">
+                            <img src="assets/prod/img3.jpg" alt="">
+                        </div>
+                        <div class="gallary__wrapper-item">
+                            <img src="assets/prod/img4.jpg" alt="">
+                        </div>
+                        <div class="gallary__wrapper-item">
+                            <img src="assets/prod/img5.jpg" alt="">
+                        </div>
+
+                        <div class="gallary__wrapper-item">
+                            <img src="assets/prod/img6.jpg" alt="">
+                        </div>
+                        <div class="gallary__wrapper-item">
+                            <img src="assets/prod/img7.jpg" alt="">
+                        </div>
+                        <div class="gallary__wrapper-item">
+                            <img src="assets/prod/img8.jpg" alt="">
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer></footer>
+
+
+    <script src="src/script/script.js"></script>
+
+
+
+</body>
+
+</html>
