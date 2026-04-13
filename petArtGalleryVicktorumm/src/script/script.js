@@ -15,7 +15,9 @@ window.addEventListener('DOMContentLoaded', () => {
         basketTotal = document.querySelector('.shop__basket-total'),
         basketTotalTable = basketTotal.querySelector('.total-table'),
         basketNoItems = document.querySelector('.bascet-zero-item'),
-        basketClear = document.querySelector('.shop__basket-button');
+        basketClear = document.querySelector('.shop__basket-button'),
+        confirmModal = document.querySelector('.confirm'),
+        basketZeroBtn = document.querySelector('.bascet-zero-btn');
 
     const basketMainDb = new Map();
     let lang = selectLang ? selectLang.value : 'en';
@@ -324,7 +326,7 @@ window.addEventListener('DOMContentLoaded', () => {
         swapLang(lang);
     }
 
-    
+
 
     header.addEventListener('click', (e) => {
         if (e.target === basketTrigger) {
@@ -337,23 +339,22 @@ window.addEventListener('DOMContentLoaded', () => {
             basketShow.classList.toggle('hide');
         } else if (e.target === basketClear) {
             if (basketMainDb.size > 0) {
-                const confirmThis = document.querySelector('.confirm');
-                confirmThis.classList.remove('hide');
+                confirmModal.classList.remove('hide');
 
-                confirmThis.addEventListener('click', (event) => {
+                confirmModal.addEventListener('click', (event) => {
                     if (event.target.classList.contains('conf')) {
-                        confirmThis.classList.add('hide');
+                        confirmModal.classList.add('hide');
                         basketMainDb.clear();
                         deleteItemOfBasketAll();
                         BasketRender();
                     } else {
-                        confirmThis.classList.add('hide');
+                        confirmModal.classList.add('hide');
                     }
                 }, { once: true });
             } else {
                 return;
             }
-        } else if (e.target === document.querySelector('.bascet-zero-btn')) {
+        } else if (e.target === basketZeroBtn) {
             basketShow.classList.toggle('hide');
         } else if (e.target.classList.contains('order-item-title-delete')) {
             let id = Number(e.target.closest('.order-item-title').dataset.delete);
