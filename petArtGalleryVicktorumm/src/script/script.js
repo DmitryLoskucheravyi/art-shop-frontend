@@ -27,15 +27,11 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
     BasketRender();
     getBasketItems();
 
     artParent.innerHTML = '';
-
-    selectLang.addEventListener('change', () => {
-        lang = selectLang.value;
-        swapLang(lang);
-    });
 
     class Art {
         constructor(id, title, artSize, paintType, paintTypeUa, year, img, priceUSD, priceUAH) {
