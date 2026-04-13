@@ -242,8 +242,56 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-    function BasketRender() {
-        if (basketMainDb.size === 0) {
+    function calculateTotals(items) {
+        let totalUSD = 0;
+        let totalUAH = 0;
+
+        for (const item of items) {
+            totalUSD += item.priceUSD;
+            totalUAH += item.priceUAH;
+        }
+
+        return { totalUSD, totalUAH };
+    }
+
+    function createBasketItem({ title, img, id }) {
+        const item = document.createElement('div');
+        item.classList.add('order-item');
+
+        item.innerHTML = `
+        <div class="order-item-title" data-delete="${id}">
+            <p class="order-item-title-descroption">"${title}"</p>
+            <img src="assets/icons/order-item-delete.svg"
+                 alt="close-icon"
+                 class="order-item-title-delete"
+                 data-delete>
+        </div>
+        <img src="assets/prod/${img}" alt="art" class="order-item-view">
+    `;
+
+        return item;
+    }
+
+
+    function createTotalRow(title, usd, uah) {
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+        <td>
+            <p class="order-title en">To pay:</p>
+            <p class="order-title uk hide">До сплати:</p>
+        </td>
+        <td>
+            <p class="order-item-price-all en">${usd}$</p>
+            <p class="order-item-price-all uk hide">${uah} грн.</p>
+        </td>
+    `;
+
+        return tr;
+    }
+
+    function toggleBasketState(isEmpty) {
+        if (isEmpty) {
             basketNoItems.classList.remove('hide');
             basketTotal.classList.add('hide');
             basketInfo.classList.add('hide');
@@ -251,64 +299,32 @@ window.addEventListener('DOMContentLoaded', () => {
             basketNoItems.classList.add('hide');
             basketTotal.classList.remove('hide');
             basketInfo.classList.remove('hide');
-
-            basketItemContainer.innerHTML = '';
-            basketTotalTable.innerHTML = '';
-
-            let totalPriceUSD = 0;
-            let totalPriceUAH = 0;
-
-            for (const { title, img, priceUSD, priceUAH, id } of basketMainDb.values()) {
-                totalPriceUSD += priceUSD;
-                totalPriceUAH += priceUAH;
-
-                const item = document.createElement('div');
-                item.classList.add('order-item');
-
-                item.innerHTML += `
-                    <div class="order-item-title" data-delete="${id}">
-                        <p class="order-item-title-descroption">"${title}"</p>
-                        <img src="assets/icons/order-item-delete.svg"
-                             alt="close-icon"
-                             class="order-item-title-delete"
-                             data-delete>
-                    </div>
-
-                    <img src="assets/prod/${img}" alt="art" class="order-item-view">
-                `;
-
-                const tr = document.createElement('tr');
-
-                tr.innerHTML += `
-                    <td>
-                        <p class="order-item-title-descroption">"${title}" :</p>
-                    </td>
-                    <td>
-                        <p class="order-item-price en">${priceUSD}$</p>
-                        <p class="order-item-price uk hide">${priceUAH} грн.</p>
-                    </td>
-                `;
-
-                basketTotalTable.append(tr);
-                basketItemContainer.append(item);
-            }
-
-            basketTotalTable.innerHTML += `
-                <tr>
-                    <td>
-                        <p class="order-title en">To pay:</p>
-                        <p class="order-title uk hide">До сплати:</p>
-                    </td>
-                    <td>
-                        <p class="order-item-price-all en">${totalPriceUSD}$</p>
-                        <p class="order-item-price-all uk hide">${totalPriceUAH} грн.</p>
-                    </td>
-                </tr>
-            `;
         }
+    }
+
+
+    function BasketRender() {
+        const items = Array.from(basketMainDb.values());
+
+        toggleBasketState(items.length === 0);
+
+        if (items.length === 0) return;
+
+        basketItemContainer.innerHTML = '';
+        basketTotalTable.innerHTML = '';
+
+        const { totalUSD, totalUAH } = calculateTotals(items);
+
+        items.forEach(item => {
+            basketItemContainer.append(createBasketItem(item));
+        });
+
+        basketTotalTable.append(createTotalRow('To pay', totalUSD, totalUAH));
 
         swapLang(lang);
     }
+
+    
 
     header.addEventListener('click', (e) => {
         if (e.target === basketTrigger) {
